@@ -1,5 +1,6 @@
 import zipfile
 import os
+import shutil
 from PyPDF2 import PdfMerger
 
 instrument = 'alto'
@@ -80,3 +81,5 @@ with PdfMerger() as merger:
 
     merger.write(f"{gig_name}.pdf")
     merger.close()
+
+shutil.rmtree('tmp')
