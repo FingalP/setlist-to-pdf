@@ -6,22 +6,22 @@ from PyPDF2 import PdfMerger
 instrument = 'alto'
 instrument_number = 2
 
-gig_name = '2022-11-10-Junction'
+gig_name = '2022-12-02-B-RSC'
 setlist_raw = '''
-Toxic
-10/10 -> Sweet Dreams
-Sell Out
+Rasputin
 Love Never Felt So Good
+Brown Eyed Girl
 Don't Start Now
-Tears Dry On Their Own
-Video Killed the Radiostar
-Bad Guy
-Vengabus
-Lean On
-Titanium
-It's Raining Men
-Crazy In Love
-'''
+10/10 --> Sweet Dreams
+99 Luftballons
+Put Your Records On
+Escape (Pina Colada)
+Sax
+All I Want For Xmas Is You
+This Girl
+Voulez Vous
+Toxic
+(Walking On Sunshine)'''
 
 setlist = [x for x in setlist_raw.split('\n') if not x == '']
 
@@ -34,7 +34,7 @@ setlist_minimal = [make_minimal(x) for x in setlist]
 
 os.mkdir('tmp')
 
-with zipfile.ZipFile('/home/fingal/Downloads/Sheet Music by song-20221109T211720Z-001.zip', 'r') as zip_ref:
+with zipfile.ZipFile('/home/fingal/Downloads/Sheet Music by song-20221202T164212Z-001.zip', 'r') as zip_ref:
     zip_ref.extractall('tmp')
 
 folders = os.listdir('tmp/Sheet Music by song/')
