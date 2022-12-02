@@ -43,7 +43,9 @@ folders_minimal = list(folders_minimal_to_folder.keys())
 
 manual_matches = {
     'vengabus': ('vengaboysmashup', ),
-    '1010sweetdreams': ('tenoutoften', 'sweetdreamsaremadeofthis')
+    '1010sweetdreams': ('tenoutoften', 'sweetdreamsaremadeofthis'),
+    'fivecoloursinherhair': ('5coloursinherhair', ),
+    'alliwantforxmasisyou': ('alliwantforchristmasisyou', )
 }
 
 def song_and_folder_match(song_minimal, folder_minimal):
