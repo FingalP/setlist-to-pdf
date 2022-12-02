@@ -48,6 +48,12 @@ manual_matches = {
     'alliwantforxmasisyou': ('alliwantforchristmasisyou', )
 }
 
+folders_to_ignore = [
+    "Pencil Full Of Lead",
+    "Don_t You Want Me",
+    "Walking On Sunshine",
+]
+
 def song_and_folder_match(song_minimal, folder_minimal):
     if song_minimal in folder_minimal:
         return True
@@ -65,7 +71,8 @@ for song_minimal in setlist_minimal:
     match = matches[0]
     for folder_minimal in match:
         folder = folders_minimal_to_folder[folder_minimal]
-        folders_in_order.append(folder)
+        if folder not in folders_to_ignore:
+            folders_in_order.append(folder)
 
 pdfs_to_merge = []
 for folder in folders_in_order:
