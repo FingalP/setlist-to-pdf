@@ -44,13 +44,16 @@ try:
 
     manual_matches = {
         'vengabus': ('vengaboysmashup', ),
+        'vengabusboomboomboom': ('vengaboysmashup', ),
         '1010sweetdreams': ('tenoutoften', 'sweetdreamsaremadeofthis'),
+        'thinkaboutthingstreasure': ('thinkaboutthings', 'treasure'),
         'fivecoloursinherhair': ('5coloursinherhair', ),
-        'alliwantforxmasisyou': ('alliwantforchristmasisyou', )
+        'alliwantforxmasisyou': ('alliwantforchristmasisyou', ),
+        'twistshout': ('twistandshout',),
+        'aintgotno': ('aintgonoigotlife',),
     }
 
     folders_to_ignore = [
-        "Pencil Full Of Lead",
         "Don_t You Want Me",
         "Walking On Sunshine",
     ]
