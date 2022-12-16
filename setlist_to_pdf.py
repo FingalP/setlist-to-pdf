@@ -81,7 +81,8 @@ try:
     pdfs_to_merge = []
     for folder in folders_in_order:
         files = os.listdir(f'tmp/Sheet Music by song/{folder}/')
-        matching_files = [x for x in files if instrument in make_minimal(x)]
+        good_files = [x for x in files if x not in ['Original-Tom']]
+        matching_files = [x for x in good_files if instrument in make_minimal(x)]
         if len(matching_files) > 1:
             matching_files = [x for x in matching_files if str(instrument_number) in x]
         if not len(matching_files) == 1:
