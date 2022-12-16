@@ -70,13 +70,13 @@ try:
         matches = [(folder_minimal, ) for folder_minimal in folders_minimal if song_and_folder_match(song_minimal, folder_minimal)]
         if len(matches) == 0 and song_minimal in manual_matches:
             matches.append(manual_matches[song_minimal])
-        if not len(matches) == 1:
+        if len(matches) == 0:
             print(f'{len(matches)} matches found for `{song_minimal}`, please add to manual or otherwise fix')
-        match = matches[0]
-        for folder_minimal in match:
-            folder = folders_minimal_to_folder[folder_minimal]
-            if folder not in folders_to_ignore:
-                folders_in_order.append(folder)
+        for match in matches:
+            for folder_minimal in match:
+                folder = folders_minimal_to_folder[folder_minimal]
+                if folder not in folders_to_ignore:
+                    folders_in_order.append(folder)
 
     pdfs_to_merge = []
     for folder in folders_in_order:
