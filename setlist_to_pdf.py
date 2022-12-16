@@ -26,7 +26,7 @@ Toxic
 setlist = [x for x in setlist_raw.split('\n') if not x == '']
 
 def make_minimal(song):
-    for char in ["'", '"', " ", "(", ")", "-", "_", ",", ".", '/', '>']:
+    for char in ["'", '"', " ", "(", ")", "-", "_", ",", ".", '/', '>', '+', '–', "’"]:
         song = song.replace(char, "")
     return song.strip().lower()
 
