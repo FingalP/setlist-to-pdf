@@ -50,7 +50,7 @@ try:
         'fivecoloursinherhair': ('5coloursinherhair', ),
         'alliwantforxmasisyou': ('alliwantforchristmasisyou', ),
         'twistshout': ('twistandshout',),
-        'aintgotno': ('aintgonoigotlife',),
+        'aintgotno': ('aintgotnoigotlife',),
     }
 
     folders_to_ignore = [
