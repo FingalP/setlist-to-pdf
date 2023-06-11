@@ -51,6 +51,7 @@ try:
         'alliwantforxmasisyou': ('alliwantforchristmasisyou', ),
         'twistshout': ('twistandshout',),
         'aintgotno': ('aintgotnoigotlife',),
+        'staceysmom': ('stacysmom',),
     }
 
     folders_to_ignore = [
