@@ -3,8 +3,15 @@ import os
 import shutil
 from PyPDF2 import PdfMerger
 
-instrument = 'alto'
-instrument_number = 2
+musicians = {
+    "fingal": {"instrument": "alto", "instrument_number": 2},
+    "milo": {"instrument": "tenor", "instrument_number": 1}
+}
+
+musician = musicians["fingal"]
+
+instrument = musician["instrument"]
+instrument_number = musician["instrument_number"]
 
 gig_name = '2022-12-02-B-RSC'
 setlist_raw = '''
