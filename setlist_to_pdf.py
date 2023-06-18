@@ -53,12 +53,16 @@ try:
         'vengabus': ('vengaboysmashup', ),
         'vengabusboomboomboom': ('vengaboysmashup', ),
         '1010sweetdreams': ('tenoutoften', 'sweetdreamsaremadeofthis'),
+        'sweetdreamaremadeofthis': ('sweetdreamsaremadeofthis', ),
         'thinkaboutthingstreasure': ('thinkaboutthings', 'treasure'),
         'fivecoloursinherhair': ('5coloursinherhair', ),
         'alliwantforxmasisyou': ('alliwantforchristmasisyou', ),
         'twistshout': ('twistandshout',),
         'aintgotno': ('aintgotnoigotlife',),
         'staceysmom': ('stacysmom',),
+        'raspuntin': ('rararasputin',),
+        'vengabusmashup': ('vengaboysmashup',),
+        '99luftballoons': ('99luftballons',),
     }
 
     folders_to_ignore = [
