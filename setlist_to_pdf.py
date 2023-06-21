@@ -5,6 +5,7 @@ from PyPDF2 import PdfMerger
 
 musicians = {
     "fingal": {"instrument": "alto", "instrument_number": 2},
+    "max": {"instrument": "alto", "instrument_number": 1},
     "milo": {"instrument": "tenor", "instrument_number": 1}
 }
 
@@ -33,7 +34,7 @@ Toxic
 setlist = [x for x in setlist_raw.split('\n') if not x == '']
 
 def make_minimal(song):
-    for char in ["'", '"', " ", "(", ")", "-", "_", ",", ".", '/', '>', '+', '–', "’", "!"]:
+    for char in ["'", '"', " ", "(", ")", "-", "_", ",", ".", '/', '>', '+', '–', "’", "!", "…"]:
         song = song.replace(char, "")
     return song.strip().lower()
 
@@ -63,6 +64,8 @@ try:
         'raspuntin': ('rararasputin',),
         'vengabusmashup': ('vengaboysmashup',),
         '99luftballoons': ('99luftballons',),
+        'shrektacular': ('shregamix',),
+        'manifeellikeawomen': ('manifeellikeawoman',),
     }
 
     folders_to_ignore = [
