@@ -38,6 +38,26 @@ Voulez Vous
 Toxic
 (Walking On Sunshine)'''
 
+# file_name = f'{gig_date} {gig_name} {musician_name} B'
+# setlist_raw = '''
+# Pencil Full Of Lead
+# 9 to 5
+# Watermelon Sugar
+# Forget You
+# I Will Survive
+# Don't Start Now
+# Shregamix
+# Bad Guy
+# Son Of A Preacher
+# Take On Me
+# This Girl
+# Vengabus
+# Gimme Gimme Gimme
+# Video KIlled The Radiostar
+# Crazy In Love
+# (Walking On Sunshine)
+# '''
+
 setlist = [x for x in setlist_raw.split('\n') if not x == '']
 
 def make_minimal(song):
