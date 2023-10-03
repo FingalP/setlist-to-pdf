@@ -66,6 +66,9 @@ try:
         '99luftballoons': ('99luftballons',),
         'shrektacular': ('shregamix',),
         'manifeellikeawomen': ('manifeellikeawoman',),
+        'cantgetyououtofmyhead': ('cantgetyououttamyhead',),
+        'brooklyn': ('brooklynupdated',),
+        'livinglavidaloca': ('livinlavidaloca', ),
     }
 
     folders_to_ignore = [
