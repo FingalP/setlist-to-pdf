@@ -102,7 +102,7 @@ try:
         good_files = [x for x in files if x not in ['Original-Tom']]
         matching_files = [x for x in good_files if instrument in make_minimal(x)]
         if len(matching_files) > 1:
-            matching_files = [x for x in matching_files if str(instrument_number) in x]
+            matching_files = [x for x in matching_files if str(instrument_number) in make_minimal(x)]
         if not len(matching_files) == 1:
             print(f'{len(matching_files)} matches found for `{folder}`, please fix')
         pdfs_to_merge.append(f'tmp/Sheet Music by song/{folder}/{matching_files[0]}')
