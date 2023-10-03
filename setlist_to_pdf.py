@@ -9,12 +9,19 @@ musicians = {
     "milo": {"instrument": "tenor", "instrument_number": 1}
 }
 
-musician = musicians["fingal"]
+musician_name = "fingal"
+gig_name = "Norfolk wedding"
+gig_date = "2023-09-09"
+
+musician = musicians[musician_name]
+
 
 instrument = musician["instrument"]
 instrument_number = musician["instrument_number"]
 
-gig_name = '2022-12-02-B-RSC'
+sheet_music_by_song_name = "Sheet Music by song-20230729T173444Z-001"
+
+file_name = f'{gig_date} {gig_name} {musician_name} A'
 setlist_raw = '''
 Rasputin
 Love Never Felt So Good
@@ -43,7 +50,7 @@ setlist_minimal = [make_minimal(x) for x in setlist]
 os.mkdir('tmp')
 
 try:
-    with zipfile.ZipFile('/home/fingal/Downloads/Sheet Music by song-20221202T164212Z-001.zip', 'r') as zip_ref:
+    with zipfile.ZipFile(f'/home/fingal/Downloads/{sheet_music_by_song_name}.zip', 'r') as zip_ref:
         zip_ref.extractall('tmp')
 
     folders = os.listdir('tmp/Sheet Music by song/')
@@ -111,7 +118,7 @@ try:
         for pdf in pdfs_to_merge:
             merger.append(pdf)
 
-        merger.write(f"{gig_name}.pdf")
+        merger.write(f"{file_name}.pdf")
         merger.close()
 
 finally:
