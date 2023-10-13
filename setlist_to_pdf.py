@@ -104,7 +104,6 @@ try:
     }
 
     folders_to_ignore = [
-        "Don_t You Want Me",
         "Walking On Sunshine",
     ]
 
