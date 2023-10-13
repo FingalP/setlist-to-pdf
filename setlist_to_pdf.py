@@ -128,13 +128,18 @@ try:
                 if folder not in folders_to_ignore:
                     folders_in_order.append(folder)
 
+    bad_file_names = ['Original-Tom', 'Old (musescore 2 no guitar part)']
+
     pdfs_to_merge = []
     for folder in folders_in_order:
         files = os.listdir(f'tmp/Sheet Music by song/{folder}/')
-        good_files = [x for x in files if x not in ['Original-Tom']]
+        good_files = [x for x in files if x not in bad_file_names]
         matching_files = [x for x in good_files if instrument in make_minimal(x)]
         if len(matching_files) > 1:
-            matching_files = [x for x in matching_files if str(instrument_number) in make_minimal(x)]
+            if instrument == 'guitar':
+                matching_files = [x for x in matching_files if 'bass' not in make_minimal(x) and 'tab' not in make_minimal(x)]
+            else:
+                matching_files = [x for x in matching_files if str(instrument_number) in make_minimal(x)]
         if not len(matching_files) == 1:
             print(f'{len(matching_files)} matches found for `{folder}`, please fix')
         pdfs_to_merge.append(f'tmp/Sheet Music by song/{folder}/{matching_files[0]}')
