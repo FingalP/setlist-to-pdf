@@ -5,8 +5,13 @@ from PyPDF2 import PdfMerger
 
 musicians = {
     "fingal": {"instrument": "alto", "instrument_number": 2},
-    "max": {"instrument": "alto", "instrument_number": 1},
-    "milo": {"instrument": "tenor", "instrument_number": 1}
+    "alice": {"instrument": "alto", "instrument_number": 1},
+    "milo": {"instrument": "tenor", "instrument_number": 1},
+    "annamaria": {"instrument": "bass", "instrument_number": 1},
+    "noah": {"instrument": "guitar", "instrument_number": 1},
+    "nick": {"instrument": "trombone", "instrument_number": 1},
+    "freya": {"instrument": "trombone", "instrument_number": "baritone"},
+    "lizzie": {"instrument": "tenor", "instrument_number": 1},
 }
 
 musician_name = "fingal"
