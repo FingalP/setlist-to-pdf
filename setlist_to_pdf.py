@@ -104,7 +104,7 @@ try:
     }
 
     folders_to_ignore = [
-        "Walking On Sunshine",
+        # "Walking On Sunshine",
     ]
 
     def song_and_folder_match(song_minimal, folder_minimal):
@@ -134,6 +134,8 @@ try:
         files = os.listdir(f'tmp/Sheet Music by song/{folder}/')
         good_files = [x for x in files if x not in bad_file_names]
         matching_files = [x for x in good_files if instrument in make_minimal(x)]
+        if len(matching_files) == 0:
+            matching_files = [x for x in good_files if 'usemescript' in make_minimal(x)]
         if len(matching_files) > 1:
             if instrument == 'guitar':
                 matching_files = [x for x in matching_files if 'bass' not in make_minimal(x) and 'tab' not in make_minimal(x)]
