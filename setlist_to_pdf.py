@@ -12,6 +12,7 @@ musicians = {
     "nick": {"instrument": "trombone", "instrument_number": 1},
     "freya": {"instrument": "trombone", "instrument_number": "baritone"},
     "lizzie": {"instrument": "tenor", "instrument_number": 1},
+    "nick-df": {"instrument": "trumpet", "instrument_number": 1},
 }
 
 musician_name = "fingal"
