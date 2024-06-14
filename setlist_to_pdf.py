@@ -56,6 +56,7 @@ try:
             continue
 
         def make_minimal(song):
+            # why not check if alphanumeric?
             for char in ["'", '"', " ", "(", ")", "-", "_", ",", ".", '/', '>', '+', '–', "’", "!", "…", '=', '—']:
                 song = song.replace(char, "")
             return song.strip().lower()
@@ -93,7 +94,8 @@ try:
                 'brooklyn': ('brooklynupdated',),
                 'livinglavidaloca': ('livinlavidaloca', ),
                 'sreep&mreep': ('screep&mreepifs&mandcreephadababy',),
-                'sreepandmreep': ('screep&mreepifs&mandcreephadababy',)
+                'sreepandmreep': ('screep&mreepifs&mandcreephadababy',),
+                'vroomvroom': ('vroomvrooooom',),
             }
 
             folders_to_ignore = [
