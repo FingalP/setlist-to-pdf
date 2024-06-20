@@ -95,7 +95,12 @@ try:
                 'livinglavidaloca': ('livinlavidaloca', ),
                 'sreep&mreep': ('screep&mreepifs&mandcreephadababy',),
                 'sreepandmreep': ('screep&mreepifs&mandcreephadababy',),
+                'screepandmreep': ('screep&mreepifs&mandcreephadababy',),
                 'vroomvroom': ('vroomvrooooom',),
+                'tracybeakersdilemna': ('tracybeakersdilemma',),
+                'tiggledigglemigglewiggle': ('tigglediggletigglemiggle',),
+                'canttakemyeyesoffofyou': ('canttakemyeyesoffyou',),
+                'murderonthedogsfloor': ('murderonthedancefloor',),
             }
 
             folders_to_ignore = [
