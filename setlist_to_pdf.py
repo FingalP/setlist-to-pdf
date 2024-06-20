@@ -125,6 +125,7 @@ try:
                     matches.append(manual_matches[song_minimal])
                 if len(matches) == 0:
                     print(f'{len(matches)} matches found for `{song_minimal}`, please add to manual or otherwise fix')
+                    print(matches)
                 for match in matches:
                     for folder_minimal in match:
                         folder = folders_minimal_to_folder[folder_minimal]
@@ -146,8 +147,9 @@ try:
                     else:
                         matching_files = [x for x in matching_files if str(instrument_number) in make_minimal(x)]
                 if not len(matching_files) == 1:
-                    print(f'{len(matching_files)} matches found for `{folder}`, please fix')
-                pdfs_to_merge.append(f'tmp/Sheet Music by song/{folder}/{matching_files[0]}')
+                    print(f'{len(matching_files)} matches found for `{folder}` for {instrument} {instrument_number}, please fix')
+                else:
+                    pdfs_to_merge.append(f'tmp/Sheet Music by song/{folder}/{matching_files[0]}')
 
             with PdfMerger() as merger:
                 for pdf in pdfs_to_merge:
