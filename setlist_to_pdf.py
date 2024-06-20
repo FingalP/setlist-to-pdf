@@ -15,9 +15,9 @@ musicians = {
     "nick-df": {"instrument": "trumpet", "instrument_number": 1},
 }
 
-
-gig_name = "Medic Grad Ball"
-gig_date = "2024-06-13"
+musician_names = ["fingal", "alice", "milo", "noah"]
+gig_name = "Pembroke May Ball"
+gig_date = "2024-06-19"
 
 
 sheet_music_by_song_name = "Sheet Music by song-20240609T105955Z-001"
@@ -64,7 +64,7 @@ try:
         setlist_minimal = [make_minimal(x) for x in setlist]
 
 
-        for musician_name in ["fingal", "alice", "milo"]:
+        for musician_name in musician_names:
             musician = musicians[musician_name]
             instrument = musician["instrument"]
             instrument_number = musician["instrument_number"]
