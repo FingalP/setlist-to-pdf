@@ -7,17 +7,21 @@ musicians = {
     "fingal": {"instrument": "alto", "instrument_number": 2},
     "alice": {"instrument": "alto", "instrument_number": 1},
     "milo": {"instrument": "tenor", "instrument_number": 1},
+    "callum": {"instrument": "tenor", "instrument_number": 1},
     "annamaria": {"instrument": "bass", "instrument_number": 1},
     "noah": {"instrument": "guitar", "instrument_number": 1},
     "nick": {"instrument": "trombone", "instrument_number": 1},
-    "freya": {"instrument": "trombone", "instrument_number": "baritone"},
+    "freya": {"instrument": "tenor", "instrument_number": 1},
     "lizzie": {"instrument": "tenor", "instrument_number": 1},
-    "nick-df": {"instrument": "trumpet", "instrument_number": 1},
+    "nickdf": {"instrument": "trumpet", "instrument_number": 1},
+    "hugh": {"instrument": "trumpet", "instrument_number": 2},
+    "ella": {"instrument": "trumpet", "instrument_number": 1},
+    "lois": {"instrument": "trombone", "instrument_number": "Bb"},
 }
 
-musician_names = ["fingal", "alice", "milo", "noah"]
-gig_name = "Pembroke May Ball"
-gig_date = "2024-06-19"
+gig_name = "Fitz Conference"
+musician_names = ["fingal", "alice", "lois", "callum", "hugh", "ella"]
+gig_date = "2024-10-24"
 
 
 sheet_music_by_song_name = "Sheet Music by song-20240609T105955Z-001"
@@ -101,6 +105,8 @@ try:
                 'tiggledigglemigglewiggle': ('tigglediggletigglemiggle',),
                 'canttakemyeyesoffofyou': ('canttakemyeyesoffyou',),
                 'murderonthedogsfloor': ('murderonthedancefloor',),
+                'manifeellikewoman': ('manifeellikeawoman',),
+                'cantstopfeelingbulliedjeansface': ('cantstopfeelingbilliejeansface',),
             }
 
             folders_to_ignore = [
@@ -132,7 +138,7 @@ try:
                         if folder not in folders_to_ignore:
                             folders_in_order.append(folder)
 
-            bad_file_names = ['Original-Tom', 'Old (musescore 2 no guitar part)']
+            bad_file_names = ['Original-Tom', 'Old (musescore 2 no guitar part)', 'old - one trumpet']
 
             pdfs_to_merge = []
             for folder in folders_in_order:
@@ -145,7 +151,7 @@ try:
                     if instrument == 'guitar':
                         matching_files = [x for x in matching_files if 'bass' not in make_minimal(x) and 'tab' not in make_minimal(x)]
                     else:
-                        matching_files = [x for x in matching_files if str(instrument_number) in make_minimal(x)]
+                        matching_files = [x for x in matching_files if str(instrument_number).lower() in make_minimal(x)]
                 if not len(matching_files) == 1:
                     print(f'{len(matching_files)} matches found for `{folder}` for {instrument} {instrument_number}, please fix')
                 else:
