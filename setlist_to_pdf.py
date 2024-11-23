@@ -24,8 +24,28 @@ gig_name = "Fitz Conference"
 musician_names = ["fingal", "alice", "lois", "callum", "hugh", "ella"]
 gig_date = "2024-10-24"
 
+def get_most_recent_sheet_music_file():
+    downloads_folder = os.path.expanduser("~/Downloads")
 
-sheet_music_by_song_name = "Sheet Music by song-20240609T105955Z-001"
+    most_recent_file = None
+    most_recent_time = 0
+
+    for filename in os.listdir(downloads_folder):
+        if filename.startswith("Sheet Music by song"):
+            filepath = os.path.join(downloads_folder, filename)
+            mod_time = os.path.getmtime(filepath)
+
+            if mod_time > most_recent_time:
+                most_recent_time = mod_time
+                most_recent_file = filepath
+
+    assert most_recent_file is not None, "No files starting with 'Sheet Music by song' found in the Downloads folder."
+
+    print("Using sheet music file:", most_recent_file)
+    return most_recent_file
+
+
+# sheet_music_by_song_name = "Sheet Music by song-20241024T154929Z-001"
 
 
 setlist_raw = ['''
@@ -52,7 +72,7 @@ Toxic
 os.mkdir('tmp')
 
 try:
-    with zipfile.ZipFile(f'/home/fingal/Downloads/{sheet_music_by_song_name}.zip', 'r') as zip_ref:
+    with zipfile.ZipFile(get_most_recent_sheet_music_file(), 'r') as zip_ref:
         zip_ref.extractall('tmp')
 
     for i, single_setlist in enumerate(setlist_raw):
