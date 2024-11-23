@@ -5,6 +5,7 @@ from PyPDF2 import PdfMerger
 
 musicians = {
     "fingal": {"instrument": "alto", "instrument_number": 2},
+    "emily": {"instrument": "alto", "instrument_number": 2},
     "alice": {"instrument": "alto", "instrument_number": 1},
     "milo": {"instrument": "tenor", "instrument_number": 1},
     "callum": {"instrument": "tenor", "instrument_number": 1},
@@ -107,6 +108,7 @@ try:
                 'murderonthedogsfloor': ('murderonthedancefloor',),
                 'manifeellikewoman': ('manifeellikeawoman',),
                 'cantstopfeelingbulliedjeansface': ('cantstopfeelingbilliejeansface',),
+                'screepmreep': ('screep&mreepifs&mandcreephadababy',)
             }
 
             folders_to_ignore = [
