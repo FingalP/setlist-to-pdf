@@ -174,7 +174,18 @@ try:
                     if instrument == 'guitar':
                         matching_files = [x for x in matching_files if 'bass' not in make_minimal(x) and 'tab' not in make_minimal(x)]
                     else:
-                        matching_files = [x for x in matching_files if str(instrument_number).lower() in make_minimal(x)]
+                        matching_files_attempt = [x for x in matching_files if str(instrument_number).lower() in make_minimal(x)]
+                        if len(matching_files_attempt) == 1:
+                            matching_files = matching_files_attempt
+                        else:
+                            negative = None
+                            if instrument == 'trombone' and str(instrument_number).lower() in ['bb', "c"]:
+                                negative = {'bb': 'ctrombone', 'c': 'bbtrombone'}[str(instrument_number).lower()]
+                            if negative is not None:
+                                matching_files_attempt = [x for x in matching_files if negative not in make_minimal(x)]
+                                if len(matching_files_attempt) > 0:
+                                    matching_files = matching_files_attempt
+
                 if not len(matching_files) == 1:
                     print(f'{len(matching_files)} matches found for `{folder}` for {instrument} {instrument_number}, please fix')
                 else:
